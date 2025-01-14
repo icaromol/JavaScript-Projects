@@ -1,4 +1,4 @@
-let counterValue = 10; // Default starting value
+let counterValue = 0; // Default starting value
 
 const createCounter = function (n) {
   return () => {
