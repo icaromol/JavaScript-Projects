@@ -18,11 +18,11 @@ function mergeStrings(word1, word2) {
 function updateResults(word1, word2) {
   const merged = mergeStrings(word1, word2);
   const results = `
-    <p><span class="variable">Word 1:</span><br><span class="value">${word1}</span></p>
-    <p><span class="variable">Word 2:</span><br><span class="value">${word2}</span></p>
+    <p><span class="variable">Word 1:</span><span class="value">${word1}</span></p>
+    <p><span class="variable">Word 2:</span><span class="value">${word2}</span></p>
     <p><span class="variable">Merged Words:</span><br><span class="value">${merged}</span></p>
   `;
-  document.querySelector("#header").innerHTML = results;
+  document.querySelector("#results").innerHTML = results;
 }
 
 // Handle button click

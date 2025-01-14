@@ -53,17 +53,7 @@ h4:hover {
   }
 }
 
-.input-wrapper {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  z-index: 3;
-}
-
+input[type="text"],
 input[type="number"] {
   padding: 10px 15px;
   border: 2px solid #fff;
@@ -75,6 +65,7 @@ input[type="number"] {
   text-align: center;
 }
 
+input[type="text"]::placeholder,
 input[type="number"]::placeholder {
   color: #bbb;
 }
