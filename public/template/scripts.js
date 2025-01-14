@@ -82,10 +82,6 @@ const loadProjectContent = (projectName) => {
   iframe.className = "project-iframe"; // Assign a class to the iframe
   contentBox.innerHTML = ""; // Clear old content
   contentBox.appendChild(iframe); // Add the iframe
-
-  // Clear the existing content and add the iframe
-  contentBox.innerHTML = ""; // Clear old content
-  contentBox.appendChild(iframe); // Add the iframe
 };
 
 // Initialize tab switching logic
