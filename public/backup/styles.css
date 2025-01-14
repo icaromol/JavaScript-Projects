@@ -16,14 +16,12 @@ body {
 
 /* Title and subtitle */
 h1 {
-  font-family: Monoton, cursive;
-  font-weight: 100;
-  word-spacing: 2rem;
   text-align: center;
   font-size: 5rem;
-  line-height: 6rem;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  line-height: 5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -72,13 +70,12 @@ h1 {
   font-size: 0.9rem; /* can be 1rem or bigger if you prefer */
   font-weight: 600; /* semi-bold style */
   font-family: inherit;
-  letter-spacing: 1.5px;
+  letter-spacing: 3;
 }
 
 /* The right side icons, grouped */
 .traffic-lights {
   display: inline-flex;
-  margin-right: 1rem;
   gap: 8px; /* space between circles */
 }
 
@@ -102,8 +99,8 @@ h1 {
 }
 
 .browser-content {
-  /* padding: 1rem;
-  padding-left: 1.5rem; */
+  padding: 1rem;
+  padding-left: 1.5rem;
 }
 
 /* Code section styling */
@@ -195,33 +192,4 @@ h1 {
   line-height: 1.5;
   letter-spacing: 1px;
   padding-bottom: 0.4rem;
-}
-
-.project-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 0 0 18px 18px; /* Bottom corners */
-  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
-  display: block; /* Ensures iframe behaves as a block element */
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 11px 20px;
-  border: none;
-  border-radius: 50px;
-  background: #000; /* Black background */
-  color: #fff; /* White text */
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: transparent; /* Transparent background */
-  color: #000; /* Black text */
-  border: 2px solid #000; /* Black border */
 }

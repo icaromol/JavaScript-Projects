@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <title>JavaScript Projects by Ícaro Molinari</title>
   </head>
   <body>
-    <!-- Title (empty, will be set by JS) -->
-    <h1 id="project-title"></h1>
+    <!-- Background -->
+    <div class="page-bg"></div>
 
-    <!-- Subtitle -->
-    <div class="quote-box">
-      <div class="quote-content">
-        This project will demonstrate a minimalist, layout. This project will
-        demonstrate a minimalist, layout This project will demonstrate a
-        minimalist, layout This project will demonstrate a minimalist, layout
-        This project will demonstrate a minimalist, layout This project will
-        demonstrate a minimalist, layout
-      </div>
+    <!-- Particle Animation -->
+    <div class="animation-wrapper">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
     </div>
 
-    <!-- Browser window -->
-    <div class="browser-window">
-      <div class="browser-header">
-        <!-- Left side: The project name span -->
-        <span class="browser-title" id="header-title"></span>
+    <!-- Gallery Header -->
+    <header class="gallery-header">
+      <h1>
+        <p>JavaScript Projects by</p>
+        <p>Ícaro Molinari</p>
+      </h1>
+    </header>
 
-        <!-- Right side: The traffic-light icons -->
-        <div class="traffic-lights">
-          <span class="traffic-light red"></span>
-          <span class="traffic-light yellow"></span>
-          <span class="traffic-light green"></span>
-        </div>
-      </div>
-      <div class="browser-content">
-        <p>Some content here...</p>
-      </div>
+    <!-- Project Gallery -->
+    <div class="gallery">
+      <a
+        href="http://localhost:3000/projects/to-be-or-not-to-be/"
+        class="project"
+      >
+        <span class="project-name">To Be or Not To Be</span>
+      </a>
+      <a href="http://localhost:3000/projects/merge-words/" class="project">
+        <span class="project-name">Merge Words</span>
+      </a>
+      <a href="http://localhost:3000/projects/counter/" class="project">
+        <span class="project-name">Counter</span>
+      </a>
     </div>
 
-    <!-- Code section with functional tabs -->
-    <div class="code-section">
-      <ul class="code-tabs">
-        <li class="tab active" data-target="tab-html">HTML</li>
-        <li class="tab" data-target="tab-css">CSS</li>
-        <li class="tab" data-target="tab-js">JavaScript</li>
-      </ul>
-      <div class="code-contents">
-        <pre id="tab-html" class="code-block active"></pre>
-        <pre id="tab-css" class="code-block"></pre>
-        <pre id="tab-js" class="code-block"></pre>
-      </div>
-    </div>
-
-    <!-- Link the JavaScript file -->
-    <script src="scripts.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        This project is based on
+        <a
+          href="https://leetcode.com/studyplan/30-days-of-javascript/"
+          target="_blank"
+          >30 Days of JavaScript</a
+        >
+        by LeetCode.
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/icaromol" target="_blank"
+          >https://github.com/icaromol</a
+        >
+      </p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/icaromolinari/" target="_blank">
+          https://www.linkedin.com/in/icaromolinari/
+        </a>
+      </p>
+      <p>© 2025 Ícaro Molinari. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

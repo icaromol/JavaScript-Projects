@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
-      rel="stylesheet"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Template</title>
-    <link rel="stylesheet" href="/template/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Back Button -->
-    <center>
-      <button
-        onclick="location.href='http://localhost:3000/'"
-        class="back-button"
-      >
-        Home
-      </button>
-    </center>
-
+    <!-- Title (empty, will be set by JS) -->
     <h1 id="project-title"></h1>
+
     <!-- Subtitle -->
     <div class="quote-box">
       <div class="quote-content">
@@ -33,18 +20,21 @@
       </div>
     </div>
 
-    <!-- Floating window box -->
+    <!-- Browser window -->
     <div class="browser-window">
       <div class="browser-header">
+        <!-- Left side: The project name span -->
         <span class="browser-title" id="header-title"></span>
+
+        <!-- Right side: The traffic-light icons -->
         <div class="traffic-lights">
           <span class="traffic-light red"></span>
           <span class="traffic-light yellow"></span>
           <span class="traffic-light green"></span>
         </div>
       </div>
-      <div class="browser-content" id="project-content">
-        <p>Loading project content...</p>
+      <div class="browser-content">
+        <p>Some content here...</p>
       </div>
     </div>
 
@@ -62,6 +52,7 @@
       </div>
     </div>
 
-    <script src="/template/scripts.js" type="module"></script>
+    <!-- Link the JavaScript file -->
+    <script src="scripts.js"></script>
   </body>
 </html>

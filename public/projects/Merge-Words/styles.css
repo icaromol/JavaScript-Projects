@@ -8,8 +8,7 @@ body {
 
 body {
   display: flex;
-  flex-direction: column; /* Ensure vertical stacking for header and gallery */
-  justify-content: flex-start; /* Align items to the top */
+  justify-content: center;
   align-items: center;
   font-size: 4rem;
   overflow: hidden;
@@ -1702,182 +1701,88 @@ body {
     transform: translateY(-2560px);
   }
 }
-
-/* Background and Particle Styles */
-.page-bg,
-.animation-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.page-bg {
-  background: #1e1e2f;
-}
-
-/* Header */
-.gallery-header {
+.page-wrapper {
   text-align: center;
-  margin-top: 50px;
-  z-index: 2;
-}
-
-.gallery-header h1 {
-  word-spacing: 2rem;
-  font-family: Monoton, cursive;
-  font-weight: 50;
-  line-height: 2.5rem;
-  letter-spacing: 10px;
-  font-size: 3rem; /* Base size for large screens */
   color: #fff;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .gallery-header h1 {
-    font-size: 2.5rem; /* Smaller font for tablets */
-    line-height: 2.5rem; /* Adjust line-height */
-    letter-spacing: 8px; /* Reduce spacing for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-header h1 {
-    font-size: 2rem; /* Even smaller font for phones */
-    line-height: 1.8rem; /* Further adjust line-height */
-    letter-spacing: 6px; /* Reduce spacing more */
-  }
-}
-
-/* Base Styles */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 100px;
-  max-width: 1200px;
-  margin: 0 auto;
   z-index: 2;
 }
 
-.project {
+h4 {
+  line-height: 3rem;
+  letter-spacing: 4px;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #fff;
+  font-family: Monoton, cursive;
+}
+
+h4:hover {
+  text-shadow: 0 0 2px #fff, 0 0 4px #1cdee8, 0 0 6px #1cdee8;
+}
+
+.variable {
+  font-weight: 800; /* Same styling as h4 */
+  color: #fff;
+  font-family: Arial;
+}
+
+.variable:hover {
+  text-shadow: 0 0 2px #fff, 0 0 4px #c61ce8, 0 0 6px #c61ce8;
+}
+
+.value {
+  font-weight: 500;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.value:hover {
+  text-shadow: 0 0 2px #fff, 0 0 4px #c61ce8, 0 0 6px #c61ce8;
+}
+
+.input-wrapper {
+  position: absolute;
+  top: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  padding: 20px; /* Internal spacing */
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  gap: 10px;
+  z-index: 3;
+}
+
+/* Updated selector to include text inputs */
+input[type="text"],
+input[type="number"] {
+  padding: 10px 15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background: transparent;
   color: #fff;
-  font-family: Trebuchet MS, sans-serif;
-  letter-spacing: 2px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
+  font-size: 16px;
+  outline: none;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, background 0.3s ease;
-
-  /* Word Wrapping */
-  word-wrap: break-word;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
-.project:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-10px);
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #bbb;
 }
 
-/* Title Styles */
-.gallery-header h4 {
-  font-family: Monoton, cursive;
-  font-size: 3rem; /* Base size for large screens */
-  color: #fff;
-  text-shadow: none;
-  margin-bottom: 30px;
+button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Show 2 boxes per row */
-    gap: 30px; /* Reduce gap between boxes */
-    padding: 50px; /* Smaller padding for gallery */
-  }
-
-  .project {
-    height: 120px; /* Reduce box height */
-    font-size: 0.9rem; /* Smaller font for project names */
-    padding: 15px; /* Smaller padding */
-  }
-
-  .gallery-header h4 {
-    font-size: 2.5rem; /* Smaller title size */
-  }
+button:hover {
+  background-color: #ddd;
 }
 
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr; /* Single column for very small screens */
-    gap: 20px; /* Smaller gap */
-    padding: 30px; /* Reduce padding further */
-  }
-
-  .project {
-    height: 100px; /* Smaller height for boxes */
-    font-size: 0.8rem; /* Smaller font size */
-    padding: 10px; /* Tighten padding */
-  }
-
-  .gallery-header h4 {
-    font-size: 2rem; /* Even smaller title size */
-  }
-}
-
-/* Footer Styles */
-.footer {
-  font-family: Trebuchet MS, sans-serif;
-  text-align: center;
-  color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  margin-top: 50px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
-}
-
-.footer a {
-  color: #ff1177;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #fff;
-}
-
-.footer strong {
-  color: #ff1177;
-  font-weight: bold;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .footer {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    font-size: 0.7rem;
-    line-height: 1.4;
-  }
-}
+/*# sourceMappingURL=styles.css.map */
