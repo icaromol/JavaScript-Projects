@@ -1,7 +1,8 @@
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center horizontally */
   font-size: 4rem;
   min-height: 600px;
   overflow: hidden;
@@ -12,24 +13,15 @@ h4 {
   position: relative;
   font-weight: 700;
   font-size: 3rem;
-  letter-spacing: 15px;
+  letter-spacing: 5px;
   color: #fff;
   text-transform: uppercase;
   width: 100%;
   text-align: center;
-  line-height: 0.6em;
+  line-height: 3.5rem;
   outline: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   transition: color 1s, text-shadow 0.3s; /* Smooth transition for non-hover state */
-  /*
-
-  line-height: 2rem;
-  letter-spacing: 4px;
-  font-size: 3rem;
-  font-weight: 200;
-  color: #fff;
-
-  */
 }
 h4:hover {
   /* Trigger animation on hover */
@@ -48,9 +40,19 @@ h4:hover {
   92.1%,
   100% {
     color: #fff;
-    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
-      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 30px #03bcf4,
+      0 0 35px #03bcf4, 0 0 40px #03bcf4;
   }
+}
+
+.input-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  gap: 15px; /* Space between input fields and button */
+}
+
+.page-wrapper {
+  text-align: center; /* Center-align the results text */
 }
 
 input[type="text"],

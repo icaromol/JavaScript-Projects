@@ -1,68 +1,61 @@
 function expect(val) {
   return {
     toBe: function (expected) {
-      if (val === expected) {
-        return true; // Values are strictly equal
-      } else {
-        throw new Error("Not Equal"); // Throw an error if not equal
-      }
+      if (val === expected) return true;
+      throw new Error("Not Equal");
     },
     notToBe: function (expected) {
-      if (val !== expected) {
-        return true; // Values are strictly not equal
-      } else {
-        throw new Error("Equal"); // Throw an error if equal
-      }
+      if (val !== expected) return true;
+      throw new Error("Equal");
     },
   };
 }
 
-// Generate test results
-let results = "";
+// Add event listener for the test button
+document.querySelector("#testButton").addEventListener("click", () => {
+  // Get user input values
+  const number1 = parseFloat(document.querySelector("#number1").value);
+  const number2 = parseFloat(document.querySelector("#number2").value);
 
-try {
-  expect(5).toBe(5);
-  results += `
-    <p><span class="variable">expect(5).toBe(5);</span><br><span class="value">True</span></p>
-  `;
-} catch (error) {
-  results += `
-    <p><span class="variable">expect(5).toBe(5);</span><br><span class="value">Failed - ${error.message}</span></p>
-  `;
-}
+  // Validate inputs
+  if (isNaN(number1) || isNaN(number2)) {
+    document.querySelector(
+      "#results"
+    ).innerHTML = `<p>Please enter valid numbers in both fields.</p>`;
+    return;
+  }
 
-try {
-  expect(5).toBe(10);
-  results += `
-    <p><span class="variable">expect(5).toBe(10);</span><br><span class="value">True</span></p>
-  `;
-} catch (error) {
-  results += `
-    <p><span class="variable">expect(5).toBe(10);</span><br><span class="value">Failed - ${error.message}</span></p>
-  `;
-}
+  // Test cases to run
+  const tests = [
+    {
+      test: () => expect(number1).toBe(number1),
+      description: `expect(${number1}).toBe(${number1})`,
+    },
+    {
+      test: () => expect(number1).toBe(number2),
+      description: `expect(${number1}).toBe(${number2})`,
+    },
+    {
+      test: () => expect(number1).notToBe(number2),
+      description: `expect(${number1}).notToBe(${number2})`,
+    },
+    {
+      test: () => expect(number1).notToBe(number1),
+      description: `expect(${number1}).notToBe(${number1})`,
+    },
+  ];
 
-try {
-  expect(5).notToBe(10);
-  results += `
-    <p><span class="variable">expect(5).notToBe(10);</span><br> <span class="value">True</span></p>
-  `;
-} catch (error) {
-  results += `
-    <p><span class="variable">expect(5).notToBe(10);</span><br><span class="value">Failed - ${error.message}</span></p>
-  `;
-}
+  // Generate and display results
+  const results = tests
+    .map(({ test, description }) => {
+      try {
+        test();
+        return `<p><span class="variable">${description};</span><br><span class="value">True</span></p>`;
+      } catch (error) {
+        return `<p><span class="variable">${description};</span><br><span class="value">Failed - ${error.message}</span></p>`;
+      }
+    })
+    .join("");
 
-try {
-  expect(5).notToBe(5);
-  results += `
-    <p><span class="variable">expect(5).notToBe(5);</span><br><span class="value">True</span></p>
-  `;
-} catch (error) {
-  results += `
-    <p><span class="variable">expect(5).notToBe(5);</span><br><span class="value">Failed - ${error.message}</span></p>
-  `;
-}
-
-// Insert test results into the DOM
-document.querySelector("#header").innerHTML = results;
+  document.querySelector("#results").innerHTML = results;
+});
